@@ -30,7 +30,7 @@ python scripts/download_sae_directions.py
 
 После этого:
 
-1. Запишите 4 выбранных SAE ID в `data/validation_direction_ids.json`.
+1. Запишите 4 (или другое число) выбранных SAE ID в `data/validation_direction_ids.json`.
 2. Запишите 30 начал текста в `data/prompts.txt`, по одному на строку.
 
 ## Запуск
