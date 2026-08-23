@@ -1,0 +1,11 @@
+[model]
+revision = "main" # Replace with one commit SHA before the final run.
+
+[data]
+train_text_path = "../data/train.txt"
+activation_dir = "../artifacts/activations/gpt2-layer5"
+
+[directions]
+tensor_path = "../data/sae_directions.npy"
+split_path = "../artifacts/directions/gpt2-layer5-split.json"
+validation_ids_path = "../data/validation_direction_ids.json"

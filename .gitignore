@@ -23,3 +23,8 @@ htmlcov/
 .DS_Store
 .idea/
 .vscode/
+
+# Research artifacts and local datasets
+artifacts/
+data/train.txt
+data/*.npy

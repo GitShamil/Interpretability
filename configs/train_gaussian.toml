@@ -1,0 +1,11 @@
+[model]
+revision = "main"
+
+[corruption]
+gaussian_probability = 0.9
+structured_probability = 0.0
+clean_probability = 0.1
+
+[training]
+method = "gaussian"
+output_dir = "../artifacts/checkpoints/gaussian"

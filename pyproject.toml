@@ -3,32 +3,37 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "interpretability"
+name = "steering-denoising"
 version = "0.1.0"
-description = "A small research project on interpretability in deep learning."
+description = "Reproducible activation-denoising experiments for language-model steering."
+readme = "README.md"
 requires-python = ">=3.11,<3.12"
 dependencies = [
-    "captum>=0.7,<1",
-    "matplotlib>=3.8,<4",
     "numpy>=1.26,<3",
-    "pandas>=2.2,<4",
-    "scikit-learn>=1.4,<2",
-    "seaborn>=0.13,<1",
     "torch>=2.2,<3",
-    "torchvision>=0.17,<1",
     "tqdm>=4.66,<5",
 ]
 
 [project.optional-dependencies]
+lm = [
+    "datasets>=3,<5",
+    "huggingface-hub>=0.25,<2",
+    "safetensors>=0.4,<1",
+    "transformers>=4.45,<6",
+]
 dev = [
-    "ipykernel>=6.29,<8",
-    "jupyterlab>=4.1,<5",
     "pytest>=8,<10",
     "ruff>=0.9,<1",
 ]
 
-[tool.setuptools]
-packages = []
+[project.scripts]
+steerlab = "steering_denoising.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"
 
 [tool.pytest.ini_options]
 addopts = "-ra -q"
