@@ -25,6 +25,9 @@ htmlcov/
 .vscode/
 
 # Research artifacts and local datasets
-artifacts/
+artifacts/*
+!artifacts/checkpoints/
+!artifacts/directions/
+!artifacts/evaluation/
 data/train.txt
 data/*.npy

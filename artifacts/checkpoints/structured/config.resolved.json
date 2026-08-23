@@ -1,0 +1,68 @@
+{
+  "corruption": {
+    "clean_probability": 0.1,
+    "gaussian_probability": 0.45,
+    "gaussian_strength_max": 1.5,
+    "gaussian_strength_min": 0.02,
+    "structured_probability": 0.45,
+    "structured_strength_max": 1.5,
+    "structured_strength_min": 0.05
+  },
+  "data": {
+    "activation_dir": "/Users/shamil/Documents/reps/Interpretability/artifacts/activations/gpt2-layer5",
+    "collection_batch_size": 8,
+    "eval_prompts_path": "/Users/shamil/Documents/reps/Interpretability/data/prompts.txt",
+    "max_length": 256,
+    "max_train_tokens": 1000000,
+    "shard_sequences": 256,
+    "train_text_path": "/Users/shamil/Documents/reps/Interpretability/data/train.txt"
+  },
+  "denoiser": {
+    "depth": 2,
+    "expansion": 2,
+    "width": null,
+    "width_multiplier": 2.0
+  },
+  "directions": {
+    "split_path": "/Users/shamil/Documents/reps/Interpretability/artifacts/directions/gpt2-layer5-split.json",
+    "tensor_path": "/Users/shamil/Documents/reps/Interpretability/data/sae_directions.npy",
+    "validation_ids_path": "/Users/shamil/Documents/reps/Interpretability/data/validation_direction_ids.json"
+  },
+  "evaluation": {
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      1.0,
+      1.5
+    ],
+    "gaussian_checkpoint": "/Users/shamil/Documents/reps/Interpretability/artifacts/checkpoints/gaussian/best",
+    "generation": {
+      "batch_size": 4,
+      "max_new_tokens": 64,
+      "temperature": 0.8,
+      "top_p": 0.95
+    },
+    "method": "baseline",
+    "output_dir": "/Users/shamil/Documents/reps/Interpretability/artifacts/evaluation/gpt2-layer5",
+    "seed": 123,
+    "structured_checkpoint": "/Users/shamil/Documents/reps/Interpretability/artifacts/checkpoints/structured/best"
+  },
+  "model": {
+    "device": "auto",
+    "dtype": "float32",
+    "layer": 5,
+    "name_or_path": "gpt2",
+    "revision": "main"
+  },
+  "training": {
+    "batch_size": 32,
+    "epochs": 20,
+    "learning_rate": 0.0003,
+    "method": "structured",
+    "output_dir": "/Users/shamil/Documents/reps/Interpretability/artifacts/checkpoints/structured",
+    "seed": 42,
+    "validation_fraction": 0.05,
+    "weight_decay": 0.0001
+  }
+}
